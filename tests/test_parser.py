@@ -27,6 +27,17 @@ def test_api_parse_canada():
     )
 
 
+def test_api_parse_new_zealand():
+    test_address = (
+        "xxx 127A Abel Smith Street, Aro Valley, Wellington 6011 xxx"
+    )
+    addresses = parse(test_address, country="NZ")
+    assert (
+        str(addresses[0].full_address)
+        == "127A Abel Smith Street, Aro Valley, Wellington 6011"
+    )
+
+
 def test_api_parse_single_street():
     test_address = "255 SOUTH STREET"
     addresses = parse_single_street(test_address, country="US")

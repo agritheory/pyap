@@ -7,6 +7,9 @@
     Contains class for constructing Address object which holds information
     about address and its components.
 
+    ``sub_locality`` is the UPU S42 / ISO 19160-4 ``district`` element (for example
+    a suburb or PO Box lobby name).
+
     :copyright: (c) 2015 by Vladimir Goncharov.
     :license: MIT, see LICENSE for more details.
 """
@@ -41,6 +44,7 @@ class Address:
     po_box: Union[str, None] = None
     post_direction: Union[str, None] = None
     phone_number: Union[str, None] = None
+    sub_locality: Union[str, None] = None
 
     def __post_init__(self):
         for s_field in self.__dataclass_fields__:
